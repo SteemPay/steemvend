@@ -1,5 +1,6 @@
 /*jslint browser: true*/
-/*global $, console, jQuery, config,*/
+/*global $, console, config, XMLHHTPRequest, isActive, startPolling*/
+
 $.ajaxSetup({
     async: false
 });
@@ -22,9 +23,9 @@ function vend() {
 
 //generate random memo
 function randMemo() {
-    var text = "";
-    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
-    var length = 7;
+    var text = "",
+        possible = "abcdefghijklmnopqrstuvwxyz0123456789",
+        length = 7;
 
     for (var i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -47,6 +48,4 @@ function transaction() {
     console.log("-----------------------------------");
 
     startPolling(account, price, memo, vend);
-
 }
-//----- END SALE -----
