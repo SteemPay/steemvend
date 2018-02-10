@@ -1,3 +1,6 @@
+/*jslint browser: true*/
+/*global steem*/
+
 //set steem api server
 steem.api.setOptions({
     url: 'https://api.steemit.com'
@@ -6,11 +9,5 @@ steem.api.setOptions({
 //account and price
 var config = {
     account: "kodaxx",
-    price: "0.001 SBD",
-    brand: "Pepsi Vending Machine"
+    price: "0.001 SBD"
 };
-
-$( document ).ready(function() {
-    $(".account").text("@" + config.account);
-    $(".price").text(config.price);
-});
